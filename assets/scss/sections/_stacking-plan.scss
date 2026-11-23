@@ -1,0 +1,204 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Stacking Plan Section
+--------------------------------------------------------------*/
+.stacking-plan {
+  .stack {
+    padding: 26px;
+
+    .floor .suites {
+      height: 26px;
+    }
+  }
+
+  .stack {
+    position: relative;
+    background: var(--surface-color);
+    border: var(--border-card, 1px solid color-mix(in srgb, var(--default-color), transparent 85%));
+    border-radius: var(--radius-card, 4px);
+    padding: 22px;
+
+    .stack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0;
+      }
+
+      small {
+        font-family: var(--nav-font);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: color-mix(in srgb, var(--default-color), transparent 40%);
+      }
+    }
+
+    .floor {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 3px;
+
+      .lvl {
+        width: 20px;
+        flex-shrink: 0;
+        font-family: var(--nav-font);
+        font-size: 11px;
+        font-weight: 600;
+        text-align: right;
+        color: color-mix(in srgb, var(--default-color), transparent 45%);
+      }
+
+      .suites {
+        flex: 1;
+        display: flex;
+        gap: 3px;
+        height: 22px;
+      }
+
+      .s {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        padding: 0 8px;
+        font-family: var(--nav-font);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-radius: 1px;
+      }
+
+      .s.l {
+        background: color-mix(in srgb, var(--default-color), transparent 88%);
+      }
+
+      .s.a {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+      }
+
+      .s.o {
+        color: var(--heading-color);
+        background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 55%) 0 4px, color-mix(in srgb, var(--accent-color), transparent 85%) 4px 8px);
+      }
+
+      .s.g {
+        justify-content: center;
+        color: var(--surface-color);
+        background: color-mix(in srgb, var(--heading-color), transparent 15%);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      &.ground {
+        margin-top: 6px;
+      }
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      margin-top: 14px;
+      font-size: 13px;
+
+      span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      i {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+      }
+
+      .k-a {
+        background: var(--accent-color);
+      }
+
+      .k-o {
+        background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 55%) 0 3px, color-mix(in srgb, var(--accent-color), transparent 85%) 3px 6px);
+      }
+
+      .k-l {
+        background: color-mix(in srgb, var(--default-color), transparent 88%);
+      }
+    }
+  }
+
+  .suite-list {
+    border-top: 2px solid var(--heading-color);
+  }
+
+  .suite-row {
+    display: grid;
+    grid-template-columns: 90px 90px 1fr 110px;
+    gap: 16px;
+    align-items: center;
+    padding: 15px 4px;
+    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+
+    strong {
+      display: block;
+      font-family: var(--heading-font);
+      font-size: 22px;
+      line-height: 1.1;
+      color: var(--heading-color);
+    }
+
+    span {
+      font-size: 12px;
+    }
+
+    .id strong {
+      color: var(--accent-color);
+    }
+
+    .note {
+      font-size: 14px;
+    }
+
+    .when {
+      text-align: right;
+    }
+
+    &.o {
+      opacity: 0.6;
+
+      .id strong {
+        color: var(--heading-color);
+      }
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr 1fr;
+
+      .note {
+        grid-column: span 2;
+        order: 3;
+      }
+    }
+  }
+
+  .note-foot {
+    margin: 14px 0 0 0;
+    font-size: 13px;
+  }
+}

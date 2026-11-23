@@ -1,0 +1,164 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+/* design-tokens:start */
+:root {
+  --radius-button: 3px;
+  --radius-card: 4px;
+  --radius-image: 2px;
+  --shadow-card: none;
+  --border-card: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+/* design-tokens:end */
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.ks-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--nav-font);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 26px;
+  border-radius: var(--radius-button, 3px);
+  border: 1px solid var(--accent-color);
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transition: 0.3s;
+
+  &:hover {
+    background: color-mix(in srgb, var(--accent-color), black 15%);
+    border-color: color-mix(in srgb, var(--accent-color), black 15%);
+    color: var(--contrast-color);
+  }
+
+  &.ks-btn-ghost {
+    background: transparent;
+    color: var(--heading-color);
+    border-color: color-mix(in srgb, var(--default-color), transparent 65%);
+
+    &:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+      background: transparent;
+    }
+  }
+}
+
+.ks-chip {
+  display: inline-flex;
+  align-items: stretch;
+  font-family: var(--nav-font);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+  border-radius: var(--radius-button, 3px);
+  overflow: hidden;
+  line-height: 1;
+
+  span {
+    padding: 6px 9px;
+    display: flex;
+    align-items: center;
+
+    &+span {
+      border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+    }
+  }
+
+  .st {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+  }
+}
+
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form {
+  .error-message {
+    display: none;
+    background: #df1529;
+    color: #ffffff;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+
+  .sent-message {
+    display: none;
+    color: #ffffff;
+    background: #059652;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+
+  .loading {
+    display: none;
+    background: var(--surface-color);
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      margin: 0 10px -6px 0;
+      border: 3px solid var(--accent-color);
+      border-top-color: var(--surface-color);
+      animation: php-email-form-loading 1s linear infinite;
+    }
+  }
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

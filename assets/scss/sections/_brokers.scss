@@ -1,0 +1,98 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Brokers Section
+--------------------------------------------------------------*/
+.brokers {
+  .broker {
+    border-top: 2px solid var(--heading-color);
+    padding-top: 16px;
+    height: 100%;
+
+    .photo {
+      display: block;
+      position: relative;
+      margin-bottom: 18px;
+
+      img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: var(--radius-image, 2px);
+        filter: grayscale(25%);
+        transition: 0.3s;
+      }
+
+      .desk {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        font-family: var(--nav-font);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-size: 11px;
+        padding: 6px 10px;
+      }
+
+      &:hover img {
+        filter: grayscale(0%);
+      }
+    }
+
+    h4 {
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 2px 0;
+
+      a {
+        color: var(--heading-color);
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+    }
+
+    .role {
+      font-family: var(--nav-font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: color-mix(in srgb, var(--default-color), transparent 35%);
+    }
+
+    p {
+      font-size: 14px;
+      margin: 10px 0 12px 0;
+      min-height: 48px;
+    }
+
+    .phone {
+      font-weight: 600;
+      font-size: 15px;
+      display: inline-flex;
+      gap: 8px;
+    }
+  }
+
+  .more {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+
+    span {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Markets Section
+--------------------------------------------------------------*/
+.markets {
+  .report-note {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 24px;
+
+    .edition {
+      font-family: var(--nav-font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+
+      li {
+        padding: 8px 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+        font-size: 15px;
+        display: flex;
+        gap: 10px;
+      }
+
+      i {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  .market-table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    background: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 82%);
+
+    thead th {
+      font-family: var(--nav-font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--contrast-color);
+      background: var(--heading-color);
+      padding: 14px 16px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    tbody th,
+    tbody td {
+      padding: 15px 16px;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+      font-size: 15px;
+      vertical-align: middle;
+    }
+
+    tbody th {
+      font-family: var(--heading-font);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--heading-color);
+      text-transform: uppercase;
+    }
+
+    tbody tr:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 95%);
+    }
+
+    .type {
+      font-family: var(--nav-font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    td b {
+      font-weight: 600;
+      color: var(--heading-color);
+      margin-left: 10px;
+    }
+
+    .bar {
+      display: inline-block;
+      vertical-align: middle;
+      width: 80px;
+      height: 6px;
+      background: color-mix(in srgb, var(--default-color), transparent 88%);
+
+      span {
+        display: block;
+        height: 100%;
+        background: var(--accent-color);
+      }
+    }
+  }
+
+  .footnote {
+    margin: 12px 0 0 0;
+    font-size: 13px;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+  }
+}

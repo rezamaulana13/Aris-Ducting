@@ -1,0 +1,115 @@
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 90px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 66px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  padding-bottom: 48px;
+  position: relative;
+
+  h2 {
+    font-family: var(--nav-font);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0;
+    line-height: 1;
+    margin: 0 0 14px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      flex-shrink: 0;
+      background: var(--accent-color);
+    }
+
+    &::after {
+      content: "";
+      width: 120px;
+      height: 1px;
+      display: inline-block;
+      background: color-mix(in srgb, var(--default-color), transparent 75%);
+    }
+  }
+
+  div {
+    color: var(--heading-color);
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: var(--heading-font);
+    max-width: 760px;
+
+    span+span {
+      color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      font-size: 30px;
+    }
+  }
+}
+
+@import './sections/_hero.scss';
+@import './sections/_space-types.scss';
+@import './sections/_featured-listings.scss';
+@import './sections/_stats.scss';
+@import './sections/_about.scss';
+@import './sections/_services.scss';
+@import './sections/_markets.scss';
+@import './sections/_brokers.scss';
+@import './sections/_testimonials.scss';
+@import './sections/_cta.scss';
+@import './sections/_listings-grid.scss';
+@import './sections/_availability-schedule.scss';
+@import './sections/_listing-alerts.scss';
+@import './sections/_property-overview.scss';
+@import './sections/_stacking-plan.scss';
+@import './sections/_building-features.scss';
+@import './sections/_viewing-request.scss';
+@import './sections/_services-list.scss';
+@import './sections/_process.scss';
+@import './sections/_fees-faq.scss';
+@import './sections/_services-cta.scss';
+@import './sections/_service-detail.scss';
+@import './sections/_service-detail-cta.scss';
+@import './sections/_broker-grid.scss';
+@import './sections/_recent-deals.scss';
+@import './sections/_careers.scss';
+@import './sections/_broker-bio.scss';
+@import './sections/_broker-listings.scss';
+@import './sections/_story.scss';
+@import './sections/_timeline.scss';
+@import './sections/_leadership.scss';
+@import './sections/_about-cta.scss';
+@import './sections/_contact.scss';
+@import './sections/_map-hours.scss';
+@import './sections/_contact-faq.scss';
+@import './sections/_starter-section.scss';

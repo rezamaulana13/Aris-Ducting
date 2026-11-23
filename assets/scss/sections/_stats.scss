@@ -1,0 +1,76 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Stats Section
+--------------------------------------------------------------*/
+.stats {
+  .stats-band {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stat {
+    padding: 34px 28px 30px 28px;
+
+    &+.stat {
+      border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+    }
+
+    @media (max-width: 992px) {
+      &:nth-child(3) {
+        border-left: 0;
+      }
+
+      &:nth-child(n+3) {
+        border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+      }
+    }
+
+    @media (max-width: 576px) {
+      &+.stat {
+        border-left: 0;
+        border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+      }
+    }
+
+    .num {
+      display: block;
+      font-family: var(--heading-font);
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--heading-color);
+    }
+
+    .label {
+      display: block;
+      margin: 12px 0 10px 0;
+      font-family: var(--nav-font);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-color);
+    }
+
+    p {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  .as-of {
+    margin: 16px 0 0 0;
+    font-size: 13px;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+  }
+}

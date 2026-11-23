@@ -1,0 +1,79 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Process Section
+--------------------------------------------------------------*/
+.process {
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 39px;
+      height: 2px;
+      background: color-mix(in srgb, var(--default-color), transparent 75%);
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .step {
+    position: relative;
+
+    .when {
+      font-family: var(--nav-font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: block;
+      color: var(--accent-color);
+      margin-bottom: 12px;
+    }
+
+    .dot {
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: var(--accent-color);
+      outline: 5px solid var(--background-color);
+      margin-bottom: 22px;
+    }
+
+    h4 {
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 8px 0;
+    }
+
+    p {
+      font-size: 15px;
+      margin: 0;
+    }
+
+    @media (max-width: 992px) {
+      padding: 0 0 28px 36px;
+      border-left: 2px solid color-mix(in srgb, var(--default-color), transparent 75%);
+      margin-left: 7px;
+
+      .dot {
+        position: absolute;
+        left: -9px;
+        top: 0;
+      }
+    }
+  }
+}

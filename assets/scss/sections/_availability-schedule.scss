@@ -1,0 +1,76 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Availability Schedule Section
+--------------------------------------------------------------*/
+.availability-schedule {
+  .sched-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    p {
+      max-width: 640px;
+      margin: 0;
+    }
+  }
+
+  .sched {
+    width: 100%;
+    min-width: 860px;
+    border-collapse: collapse;
+    background: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 82%);
+
+    thead th {
+      font-family: var(--nav-font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--contrast-color);
+      background: var(--heading-color);
+      padding: 13px 14px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    tbody th,
+    tbody td {
+      padding: 13px 14px;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    tbody th {
+      font-weight: 600;
+      color: var(--heading-color);
+    }
+
+    .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .t {
+      font-family: var(--nav-font);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .now {
+      font-weight: 600;
+      color: var(--accent-color);
+    }
+
+    tbody tr:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 95%);
+    }
+  }
+}
