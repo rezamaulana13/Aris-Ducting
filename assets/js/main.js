@@ -171,10 +171,60 @@
   /**
    * Frequently Asked Questions Toggle
    */
-  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
+  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header, .faq-item .faq-question').forEach((faqItem) => {
     faqItem.addEventListener('click', () => {
-      faqItem.parentNode.classList.toggle('faq-active');
+      const parent = faqItem.closest('.faq-item');
+      if (parent) {
+        parent.classList.toggle('active');
+        parent.classList.toggle('faq-active');
+        const btn = parent.querySelector('.faq-question');
+        if (btn) {
+          const isExpanded = parent.classList.contains('active');
+          btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        }
+      }
     });
   });
+
+  /**
+   * Auto-scroll sticky sidebar synchronously with main content scroll
+   */
+  function initSidebarScrollSync() {
+    const sidebars = document.querySelectorAll('.article-sidebar-sticky, .service-sidebar-sticky');
+    if (sidebars.length === 0) return;
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          sidebars.forEach((sidebar) => {
+            const container = sidebar.closest('.article-layout-grid, .service-detail, .row');
+            if (!container) return;
+
+            const rect = container.getBoundingClientRect();
+            const containerTop = rect.top;
+            const containerHeight = rect.height;
+            const windowHeight = window.innerHeight;
+
+            const maxScrollDistance = containerHeight - windowHeight;
+            if (maxScrollDistance > 0) {
+              const scrolledDistance = Math.max(0, -containerTop + 90);
+              const progress = Math.min(1, Math.max(0, scrolledDistance / maxScrollDistance));
+
+              const maxSidebarScroll = sidebar.scrollHeight - sidebar.clientHeight;
+              if (maxSidebarScroll > 0) {
+                sidebar.scrollTop = progress * maxSidebarScroll;
+              }
+            }
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  window.addEventListener('load', initSidebarScrollSync);
+  initSidebarScrollSync();
 
 })();
